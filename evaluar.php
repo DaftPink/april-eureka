@@ -65,6 +65,10 @@ body{
 		else
 		{
 			$nn = $_GET["cuantos"];
+			if (intval($nn) == 0)
+			{
+				$nn = 50;
+			}
 		}
 		$count = mysqli_fetch_assoc($mysqli->query("select count(*) from entrantes"))["count(*)"];
 		if (is_null($_GET) || !isset($_GET["n"]))
@@ -140,7 +144,7 @@ body{
 		{
 			echo "<li".(($n == $j) ? " class=\"page-item active\"><a href=\"#" : "><a href=\"evaluar.php?cuantos=".$nn."&n=".$j)."\">".$i."</a></li>";
 			$j = $j + $nn;
-			$i = $i + 1;
+			$i++;
 		}
 		echo "<li".((($n + $nn) < $count) ? "><a href=\"evaluar.php?cuantos=".$nn."&n=".($n + $nn) : " class=\"page-item disabled\"><a href=\"#")."\">&gt;</a></li>";
 		echo "<li".(($count - $nn != $n) ? "><a href=\"evaluar.php?cuantos=".$nn."&n=".max($count - $nn, 0) : " class=\"page-item disabled\"><a href=\"#")."\">&gt;&gt;</a></li>";
