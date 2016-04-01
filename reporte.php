@@ -1,4 +1,4 @@
- 
+  
 <html>
 <head> <meta charset="UTF-8"/>
   <!-- Bootstrap -->
@@ -12,14 +12,13 @@
         background-color: #7ECFF5;
 	}
 	  .table-hover tbody {
-	        background-color: white;
+	    background-color: white;
 	}
 	 .table-hover tbody tr:hover td {
-	        /*background-color:#20D0D8;*/
-	         background-color: #B1E2F9;
+	    background-color: #B1E2F9;
 	}
 	body{
-	  	     background-color: white;
+	  	background-color: white;
   }
   </style>
  <body>
